@@ -1,0 +1,25 @@
+
+<div id="page-wrap">
+
+    <div id="slider">
+            <div id="mover">
+                <? foreach ($this->slider as $item): ?>
+                    <div id="slide-1" class="slide">
+                        <h1><?=$item['title']; ?></h1>
+                        <p>Donec gravida posuere arcu. Nulla facilisi. Phasellus imperdiet. Vestibulum at metus. Integer euismod. Nullam placerat rhoncus sapien. Ut euismod. Praesent libero. Morbi pellentesque libero sit amet ante. Maecenas tellus.</p>
+                        <a href="<?=$this->url(array(
+                                'controller' => 'index',
+                                'action' => 'product',
+                                'id' => $item['id']));
+                ?>"><img src="<?=$this->url();?>img/upload/<?=$item['image']?>" alt="learn more" /></a>
+                    </div>
+                <? endforeach; ?>
+            </div>
+    </div>
+</div>
+<!--<div class="container main-content">
+    <div class="content span8">
+        <?//= $this->layout()->content; // здесь будет автоматичеки выводиться содержимое скриптов вида?>
+    </div>
+</div>-->
+

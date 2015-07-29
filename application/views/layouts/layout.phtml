@@ -1,0 +1,64 @@
+<?= $this->doctype();?>
+
+<html>
+    <head>
+        <?
+        echo $this->headTitle(); 
+        echo $this->headMeta();
+        echo $this->headScript();
+        echo $this->headLink();
+        ?>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+ 
+            </div>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container" style="width: auto">
+                        <a class="brand" href="/">
+                            <?=$this->title; ?>
+                        </a>
+                        <div class="nav-collapse">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="container main-content">
+                <div class="content span8">
+                    
+                 <?//= $this->layout()->content; ?>
+                    
+                    <? if (count($this->page)){ ?>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th class="span2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <?= $this->PartialLoop('/_partials/page-row.phtml', $this->page) ?>
+                        </tbody>
+                    </table>
+                    <a href="/admin/addPage/" class="btn btn-primary">Add</a>
+                    <? }else { ?>
+                    <div class="alert alert-info">
+                       Нет данных
+                    </div>
+                <? } ?>
+                </div>
+            </div>
+            <hr/>
+            <div class="footer">
+              © Zend <?= date('Y') ?>
+                <div class="footer-menu">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

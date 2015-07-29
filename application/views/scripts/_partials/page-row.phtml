@@ -1,0 +1,18 @@
+<tr>
+    <td><?= $this->id ?></td>
+    <td style="width: 200px"><img src="<?=DS.'img'.DS.'upload'.DS.$this->image; 
+?>" alt="no-image" width="100%"></td>
+    <td><?= $this->title ?></td>
+    <td>
+        <a href="<?=$this->url(array(
+                                'controller' => 'admin',
+                                'action' => 'edit',
+                                'id' => $this->id));
+                ?>"title="Edit" id="editPage"><i class="icon-pencil"></i></a>
+        <a href="<?=$this->url(array(
+                                'controller' => 'admin',
+                                'action' => 'delete',
+                                'id' => $this->id)); 
+                ?>" title="Delete" id="deleteAdmin"><i class="icon-trash"></i></a>
+    </td>
+</tr>

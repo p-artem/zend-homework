@@ -1,0 +1,33 @@
+
+<a href="<?=$this->url(array(
+                                'controller' => 'admin',
+                                'action' => 'logout'));
+            ?>">Выход</a>
+<br />
+<div class="container main-content">    
+    <div class="content span8">
+        <? if (count($this->page)): ?>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th class="span1">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <?= $this->PartialLoop('/_partials/page-row.phtml', $this->page) ?>
+            </tbody>
+        </table>
+        <a href="<?=$this->url(array(
+                                'controller' => 'admin',
+                                'action' => 'add'));
+                ?>" class="btn btn-primary">Add</a>
+        <? else: ?>
+        <div class="alert alert-info">
+           Нет данных
+        </div>
+    <? endif; ?>
+    </div>
+</div>
